@@ -1,0 +1,7 @@
+---
+
+- name: do the thing!
+  hosts: localhost
+  tasks:
+  - debug:
+      msg: "Current branch status is: {{ lookup('github-status', 'ansible/ansible', branch='devel') }}!"

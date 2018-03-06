@@ -1,11 +1,11 @@
 ---
 
 
-- name: get a fun fact!
+- name: get a fun Chuck Norris fact!
   hosts: localhost
   tasks:
   - debug:
-      msg: "{{ lookup('fun_fact', 'random') }}"
+      msg: "{{ lookup('fun_fact') }}"
 
 - name: look up github status for ansible
   hosts: localhost

@@ -10,11 +10,6 @@ import urllib2
 class LookupModule(LookupBase):
 
     def run(self, terms, variables=None, **kwargs):
-        ret = []
-
-        for term in terms:
-            req = urllib2.Request('https://api.chucknorris.io/jokes/random', headers={ 'User-Agent': 'Mozilla/5.0' })
-            data = json.loads(urllib2.urlopen(req).read())
-            ret.append(to_text(data['value']))
-        
-        return ret
+        req = urllib2.Request('https://api.chucknorris.io/jokes/random', headers={ 'User-Agent': 'Mozilla/5.0' })
+        data = json.loads(urllib2.urlopen(req).read())
+        return [to_text(data['value'])]

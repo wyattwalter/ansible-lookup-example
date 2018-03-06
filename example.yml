@@ -1,5 +1,12 @@
 ---
 
+
+- name: get a fun fact!
+  hosts: localhost
+  tasks:
+  - debug:
+      msg: "{{ lookup('fun_fact', 'random') }}"
+
 - name: do the thing!
   hosts: localhost
   tasks:

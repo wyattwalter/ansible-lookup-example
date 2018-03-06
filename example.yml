@@ -7,8 +7,8 @@
   - debug:
       msg: "{{ lookup('fun_fact', 'random') }}"
 
-- name: do the thing!
+- name: look up github status for ansible
   hosts: localhost
   tasks:
   - debug:
-      msg: "Current branch status is: {{ lookup('github-status', 'ansible/ansible', branch='devel') }}!"
+      msg: "Current branch status is: {{ lookup('github_status', 'ansible/ansible', branch='devel') }}!"
